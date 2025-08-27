@@ -1,0 +1,15 @@
+- hosts: localhost
+  tasks:
+    - name: install ldap
+      ansible.builtin.apt:
+        name: slapd
+        state: present
+        update_cache: yes
+      become: yes
+
+    - name: install ldap utils
+      ansible.builtin.apt:
+        name: ldap-utils
+        state: present
+        update_cache: yes
+      become: yes
